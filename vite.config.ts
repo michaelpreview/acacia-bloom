@@ -1,11 +1,14 @@
-import { defineConfig } from '@tanstack/start/config'
-import tsConfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { tanstackRouter } from '@tanstack/router-plugin/vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  tsr: {
-    appDirectory: 'src',
-  },
-  vite: {
-    plugins: [tsConfigPaths()],
-  },
+  plugins: [
+    react(),
+    tsconfigPaths(),
+    tanstackRouter(),
+    tailwindcss(),
+  ],
 })
