@@ -5,6 +5,8 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  base: '/acacia-bloom/',
+
   plugins: [
     react(),
     tsconfigPaths(),
