@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 
-// If you are NOT using React Query yet, we still must define it:
 import { QueryClient } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
@@ -12,14 +11,12 @@ const queryClient = new QueryClient()
 const router = createRouter({
   routeTree,
   defaultPreload: 'intent',
-
-  // ✅ THIS IS REQUIRED (fixes your error)
+  basepath: '/acacia/',
   context: {
     queryClient,
   },
 })
 
-// Type safety registration
 declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router
