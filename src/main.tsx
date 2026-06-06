@@ -11,7 +11,7 @@ const queryClient = new QueryClient()
 const router = createRouter({
   routeTree,
   defaultPreload: 'intent',
-  basepath: '/acacia/',
+  basepath: '/acacia-bloom/',
   context: {
     queryClient,
   },
